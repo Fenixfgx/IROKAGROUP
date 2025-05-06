@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Iroka Group</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Iroka Group" name="keywords">
+    <meta content="Iroka Group" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.min.css" rel="stylesheet">
+    <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<!-- Antes del cierre del body -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body style="padding-top: 7%;">
+    <!-- Navbar Start -->
+<div class="container-fluid p-0 nav-bar" style=position:fixed;>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid d-flex align-items-center">
+            <a href="#inicio" class="navbar-brand">
+                <img src="img/logo.png" alt="Iroka Group" style="height: 60px;">
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto">
+                    <a href="#inicio" class="nav-item nav-link active">Inicio</a>
+                    <a href="#quienes-somos" class="nav-item nav-link">Quiénes Somos</a>
+                    <a href="#company" class="nav-item nav-link">Empresas</a>
+                    <a href="#valores" class="nav-item nav-link">Valores</a>
+                    <a href="#sectores" class="nav-item nav-link">Negocios</a>
+                    <a href="#contacto" class="nav-item nav-link">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
+<style>
+    /* Altura fija para el carrusel */
+    #blog-carousel {
+        max-height: 600px; /* Ajusta aquí según tu necesidad */
+        overflow: hidden;
+    }
+
+    #blog-carousel .carousel-inner,
+    #blog-carousel .carousel-item,
+    #blog-carousel img {
+        height: 600px; /* misma altura en todo */
+        object-fit: cover; /* para que la imagen se ajuste sin deformarse */
+    }
+
+    .carousel-item.active {
+        opacity: 1;
+    }
+
+    .fade-in {
+    opacity: 0;
+    animation: fadeIn ease 1.2s forwards;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+    .valores-corporativos {
+        background-image: url('https://static.vecteezy.com/system/resources/thumbnails/007/448/799/small_2x/abstract-earth-in-space-galaxy-3d-rendering-elements-of-this-image-furnished-by-nasa-photo.jpg');
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .valores-corporativos .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7); /* Ajusta la opacidad cambiando el último valor */
+        z-index: -1;
+    }
+
+    .valores-corporativos .container {
+        z-index: 2;
+    }
+
+    /* Mejora la legibilidad del texto */
+    .valores-corporativos h4,
+    .valores-corporativos h2,
+    .valores-corporativos p {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .subt {
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .nav-bar {
+        transition: all 0.3s ease-in-out;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+    }
+
+    .nav-bar .navbar {
+        transition: all 0.3s ease-in-out;
+        padding: 1rem;
+    }
+
+    .nav-bar.scrolled {
+        background: rgba(0, 0, 0, 0.95);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-bar.scrolled .navbar {
+        padding: 0.5rem;
+    }
+
+    .nav-bar.scrolled .navbar-brand img {
+        height: 45px !important;
+        transition: height 0.3s ease-in-out;
+    }
+
+    /* Ajuste para el contenido debajo del navbar fijo */
+    body {
+        padding-top: 0;
+    }
+
+    #inicio {
+        margin-top: -90px; /* Ajusta este valor según la altura de tu navbar */
+    }
+
+    .carousel-item {
+        height: 100vh;
+    }
+
+    .section-title::after {
+        height: 28px !important;
+    }
+
+    .section-title {
+    position: relative;
+    padding: 30px 0 35px 0 !important;
+    text-align: center;
+    }
+
+    /* Estilos del Navbar */
+    .nav-bar {
+        transition: all 0.3s ease-in-out;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+    }
+
+    .nav-bar .navbar {
+        transition: all 0.3s ease-in-out;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-bar.scrolled {
+        background: rgba(0, 0, 0, 0.95);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .navbar-nav {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .nav-item {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    /* Ajustes para el modo responsive */
+    @media (max-width: 992px) {
+        .navbar-nav {
+            padding: 1rem 0;
+            align-items: flex-start;
+        }
+
+        .nav-item {
+            height: auto;
+        }
+    }
+
+    .reservation, .page-header, .offer, .footer {
+    background: linear-gradient(rgb(51 33 29 / 0%), rgba(51, 33, 29, 0.9)), url(https://wallpapers.com/images/hd/diagonal-earth-surface-hww6at6wjhw6vx4f.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+   <!-- Carousel Start -->
+<div id="inicio" class="container-fluid p-0 mb-5">
+    <div id="blog-carousel" class="carousel slide overlay-bottom" data-ride="carousel">
+        <div class="carousel-inner">
+            <!-- Aquí el contenido se llenará dinámicamente -->
+        </div>
+        <a class="carousel-control-prev" href="#blog-carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#blog-carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+</div>
+<!-- Carousel End -->
+
+    <!-- About Start -->
+<div id="quienes-somos" class="container-fluid py-5" style="padding-top: 0px !important;">
+    <div class="container">
+        <div class="section-title">
+            <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Quienes Somos</h4>
+            <h1 class="display-4">Trabajando desde 2005</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 py-0 py-lg-5">
+                <h1 class="mb-3" id="qs-historia-titulo">Nuestra Historia</h1>
+                <p id="qs-historia-texto">
+                    ...
+                </p>
+            </div>
+            <div class="col-lg-4 py-5 py-lg-0" style="min-height: 500px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-100" src="img/about.png" style="object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-lg-4 py-0 py-lg-5">
+                <h1 class="mb-3" id="qs-vision-titulo">Nuestra Vision</h1>
+                <p id="qs-vision-texto">
+                    ...
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+    <!-- Empresas Start -->
+    <div class="container-fluid pt-5" id="company" style="padding-top: 0rem !important;">
+        <div class="container">
+            <div class="section-title">
+                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Nuestras Empresas</h4>
+                <h1 class="display-4">Aliados Productivos</h1>
+            </div>
+            <div class="row" id="empresas">
+                <!-- Aquí se insertarán dinámicamente las tarjetas -->
+            </div>
+        </div>
+    </div>
+<!-- Empresas End -->
+
+<!-- Valores Corporativos Start -->
+<div id="valores" class="container-fluid py-5 text-white position-relative fade-in valores-corporativos">
+    <div class="overlay"></div>
+    <h2 style="justify-self: center;Z-INDEX: 12;color: floralwhite;font-size: xxx-large;">IROKA GROUP</h2>
+    <div class="container py-5 position-relative">
+        <div class="row">
+            <!-- Columna: Principios Corporativos -->
+            <div class="col-lg-6 mb-4">
+                <h4 class="text-uppercase text-primary" style="letter-spacing: 2px;">Principios Corporativos</h4>
+                <h2 class="display-5 text-white mb-4 subt">Nuestros Principios</h2>
+                <ul class="list-unstyled" id="principios-list">
+                    <!-- Aquí se cargarán los principios desde la hoja de cálculo -->
+                </ul>
+            </div>
+            <!-- Columna: Modelo de Responsabilidad -->
+            <div class="col-lg-6 mb-4">
+                <h4 class="text-uppercase text-primary" style="letter-spacing: 2px;">Modelo de Responsabilidad Social</h4>
+                <h2 class="display-5 text-white mb-4 subt">Modelo de Responsabilidad y Ciudadanía Corporativa</h2>
+                <ul class="list-unstyled" id="modelo-list">
+                    <!-- Aquí se cargarán las líneas de acción desde la hoja de cálculo -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Menu Start -->
+<div id="sectores" class="container-fluid pt-5" style="padding-top: 0px !important;">
+    <div class="container">
+        <div class="section-title">
+            <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Sectores</h4>
+            <h1 class="display-4">Áreas de Negocio</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <h1 class="mb-5">Sector Industrial</h1>
+                <div id="sector-industrial">
+                    <!-- Aquí se cargarán las áreas industriales -->
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h1 class="mb-5">Sector Servicios</h1>
+                <div id="sector-servicios">
+                    <!-- Aquí se cargarán las áreas de servicios -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Menu End -->
+
+    <!-- Contact Section Start -->
+<div id="contacto" class="container-fluid my-5" style="margin-top: -1rem !important;">
+    <div class="container">
+        <div class="reservation position-relative overlay-top overlay-bottom">
+            <div class="row align-items-center">
+                <div class="col-lg-6 my-5 my-lg-0">
+                    <div class="p-5">
+                        <div class="mb-4">
+                            <h1 class="display-3 text-primary">IROKA</h1>
+                            <h1 class="text-white">Contacto Empresarial</h1>
+                        </div>
+                        <p class="text-white">Estamos comprometidos con el desarrollo empresarial y la innovación. Contacta con nosotros para explorar oportunidades de colaboración y crecimiento conjunto.</p>
+                        <ul class="list-inline text-white m-0">
+                            <li class="py-2"><i class="fa fa-building text-primary mr-3"></i>Alianzas Estratégicas</li>
+                            <li class="py-2"><i class="fa fa-handshake text-primary mr-3"></i>Oportunidades de Negocio</li>
+                            <li class="py-2"><i class="fa fa-chart-line text-primary mr-3"></i>Desarrollo Empresarial</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center p-5" style="background: rgba(0, 0, 0, .8);">
+                        <h1 class="text-white mb-4 mt-5" id="formx">Formulario de Contacto</h1>
+                        <form class="mb-5" id="contactForm" onsubmit="return enviarMensaje(event)">
+                            <div class="form-group">
+                                <input type="text" class="form-control bg-transparent border-primary p-4" 
+                                       name="empresa"
+                                       placeholder="Nombre de la Empresa"
+                                       required="required" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control bg-transparent border-primary p-4" 
+                                       name="contacto"
+                                       placeholder="Nombre del Contacto"
+                                       required="required" />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control bg-transparent border-primary p-4" 
+                                       name="email"
+                                       placeholder="Correo Electrónico"
+                                       required="required" />
+                            </div>
+                            <div class="form-group">
+                                <select class="custom-select bg-transparent border-primary px-4" 
+                                        name="area"
+                                        style="height: 49px;"
+                                        required="required">
+                                    <option value="">Área de Interés</option>
+                                    <option value="alianzas">Alianzas Estratégicas</option>
+                                    <option value="negocios">Oportunidades de Negocio</option>
+                                    <option value="desarrollo">Desarrollo Empresarial</option>
+                                    <option value="otros">Otros</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control bg-transparent border-primary p-4" 
+                                          name="mensaje"
+                                          rows="3" 
+                                          placeholder="Mensaje"
+                                          required="required"></textarea>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-block font-weight-bold py-3" type="submit">
+                                    Enviar Mensaje
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact Section End -->
+
+<!-- Testimonial Start -->
+<div id="equipo" class="container-fluid py-5">
+    <div class="container">
+        <div class="section-title">
+            <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Calidad Profesional</h4>
+            <h1 class="display-4">Nuestro Equipo</h4>
+        </div>
+        <div class="owl-carousel testimonial-carousel">
+            <div class="testimonial-item">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="img-container rounded-circle overflow-hidden" style="width: 60px; height: 60px;">
+                        <img class="img-fluid" src="img/partner-1.jpg" alt="Aliado Empresarial">
+                    </div>
+                    <div class="ml-3">
+                        <h4>...</h4>
+                        <i>...</i>
+                    </div>
+                </div>
+                <p class="m-0">"..."</p>
+            </div>
+            <div class="testimonial-item">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="img-container rounded-circle overflow-hidden" style="width: 60px; height: 60px;">
+                        <img class="img-fluid" src="img/partner-2.jpg" alt="Aliado Empresarial">
+                    </div>
+                    <div class="ml-3">
+                        <h4>...</h4>
+                        <i>...</i>
+                    </div>
+                </div>
+                <p class="m-0">"..."</p>
+            </div>
+            <div class="testimonial-item">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="img-container rounded-circle overflow-hidden" style="width: 60px; height: 60px;">
+                        <img class="img-fluid" src="img/partner-3.jpg" alt="Aliado Empresarial">
+                    </div>
+                    <div class="ml-3">
+                        <h4>...</h4>
+                        <i>...</i>
+                    </div>
+                </div>
+                <p class="m-0">"..."</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+
+
+    <!-- Footer Start -->
+<div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
+    <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
+        <div class="col-lg-4 col-md-6 mb-5">
+            <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Contacto</h4>
+            <div id="footer-contact">
+                <!-- Aquí se cargarán los datos de contacto -->
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-5">
+            <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Redes Sociales</h4>
+            <p id="footer-social-text"></p>
+            <div class="d-flex justify-content-start" id="footer-social-links">
+                <!-- Aquí se cargarán los enlaces sociales -->
+            </div>
+        </div>
+        <!-- Reemplazar la sección de horarios en el footer por: -->
+<div class="col-lg-4 col-md-6 mb-5">
+    <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Enlaces de Acceso</h4>
+    <div id="footer-links">
+        <!-- Aquí se cargarán los enlaces dinámicamente -->
+    </div>
+</div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
